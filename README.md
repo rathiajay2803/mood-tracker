@@ -10,24 +10,26 @@ Mood Tracker is an interactive web application designed to help users log and vi
 - **Calendar View:** See your mood history for each day of the month.
 - **Local Storage:** Saves mood data for persistent tracking.
 - **Simple UI:** A clean and user-friendly design for easy navigation.
+- **Can't log for Future Mood:** Application does not allow to enter moods for future date.
+- **Check your Mood History:** Using Calender as a tool, you can view your mood history
 
 ## 📸 Screenshots
 
-_(Please add screenshots here)_
+![Application UI](./sreenshot/Application%20ui.PNG)
 
 ## 🚀 Deployment
 
-**Live Demo:** _(Provide Deployment Link Here)_
+**Live Demo:** https://rathiajay2803.github.io/mood-tracker/
 
 ## 📦 Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/rathiajay2803/mood-tracker.git
    ```
 2. Navigate to the project folder:
    ```bash
-   cd mood-tracker
+   cd MOOD TRACKER
    ```
 3. Open `index.html` in your browser or use a local server.
 
@@ -46,4 +48,4 @@ This project is licensed under the MIT License.
 
 ---
 
-🚀 **Happy Mood Tracking!** 😊
+🚀 **Happy Tracking!** 😊
