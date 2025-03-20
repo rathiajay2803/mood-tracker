@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Mood Tracker</title>
+  </head>
+  <body>
+    <header>
+      <h1>Mood Tracker</h1>
+    </header>
+    <main>
+      <div class="mood-form">
+        <form action="#" class="mood-form">
+          <p class="todays-mood-ques">How is your mood?</p>
+
+          <input type="date" name="moodDate" id="moodDate" />
+
+          <div class="mood-emojis-container">
+            <div class="emoji-wrapper">
+              <input
+                type="radio"
+                name="todays-mood"
+                id="excited"
+                value="excited"
+                class="invisible"
+              />
+              <label for="excited" class="mood-icon excited">
+                <!-- <img
+                  src="./svg/excited-face-icon.svg"
+                  class="mood-icon"
+                  alt="excited"
+              /> -->
+              </label>
+            </div>
+
+            <div class="emoji-wrapper">
+              <input
+                type="radio"
+                name="todays-mood"
+                id="happy"
+                value="happy"
+                class="invisible"
+              />
+              <label for="happy" class="mood-icon happy">
+                <!-- <img
+                  src="./svg/happy-svgrepo-com.svg"
+                  class="mood-icon"
+                  alt="Happy"
+              /> -->
+              </label>
+            </div>
+
+            <div class="emoji-wrapper">
+              <input
+                type="radio"
+                name="todays-mood"
+                id="neutral"
+                value="neutral"
+                class="invisible"
+              />
+              <label for="neutral" class="mood-icon neutral">
+                <!-- <img
+                  src="./svg/neutral-face.svg"
+                  class="neutral"
+                  alt="Neutral"
+              /> -->
+              </label>
+            </div>
+
+            <div class="emoji-wrapper">
+              <input
+                type="radio"
+                name="todays-mood"
+                id="sad"
+                value="sad"
+                class="invisible"
+              />
+              <label for="sad" class="mood-icon sad">
+                <!-- <img src="./svg/sad-face-icon.svg" class="mood-icon" alt="Sad"/> -->
+              </label>
+            </div>
+          </div>
+
+          <div class="btn">
+            <button type="submit" class="submit-btn">Feeling Logged!</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="calender-container">
+        <div class="calender-header">
+          <button class="prev-month"><</button>
+          <p class="current-month">March 2025</p>
+          <button class="next-month">></button>
+        </div>
+        <div class="calender-body">
+          <div class="calender-weekdays">
+            <!-- <div class="weekday">Sunday</div>
+            <div class="weekday">Monday</div>
+            <div class="weekday">Tuesday</div>
+            <div class="weekday">Wednesday</div>
+            <div class="weekday">Thursday</div>
+            <div class="weekday">Friday</div>
+            <div class="weekday">Saturday</div> -->
+          </div>
+          <div class="calender-days">
+            <!-- <div class="days">
+              <div>01</div>
+              <div class="faces">😃</div> -->
+          </div>
+        </div>
+        <div class="calender-footer">
+          <p>See your Mood History</p>
+          <select name="month" id="months">
+            <option value="0">Jan</option>
+            <option value="1">Feb</option>
+            <option value="2">Mar</option>
+            <option value="3">Apr</option>
+            <option value="4">May</option>
+            <option value="5">Jun</option>
+            <option value="6">Jul</option>
+            <option value="7">Aug</option>
+            <option value="8">Sep</option>
+            <option value="9">Oct</option>
+            <option value="10">Nov</option>
+            <option value="11">Dec</option>
+          </select>
+
+          <select name="year" id="years"></select>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
