@@ -1,5 +1,3 @@
-// import EmojiFormHandler from './ui/form.js';
-
 const emojiMoodForm = document.querySelector('.mood-form');
 const emojisMoodContainer = emojiMoodForm.querySelector(
   '.mood-emojis-container'
@@ -13,6 +11,7 @@ class eventListenerHandler {
     this.emojiObj = emojiObj;
   }
 
+  // Apply event listeners to mood selection form
   applyFormEventListener() {
     emojisMoodContainer.addEventListener(
       'click',
@@ -24,6 +23,7 @@ class eventListenerHandler {
     );
   }
 
+  // Apply event listeners to calendar navigation
   applyCalenderEventListner() {
     const yearElement = calenderContainer.querySelector('#years');
     const monthElement = calenderContainer.querySelector('#months');

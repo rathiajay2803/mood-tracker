@@ -3,6 +3,7 @@ const calenderHeader = calenderContainer.querySelector('.calender-header');
 const calenderBody = calenderContainer.querySelector('.calender-body');
 
 class Calender {
+  // Stores month names and days of the week for reference
   #months = [
     'January',
     'February',
@@ -22,10 +23,11 @@ class Calender {
 
   constructor() {}
 
+  // Get the weekdays list
   get getWeekday() {
     return this.#days;
   }
-
+  // Get total days in a given month, considering leap years
   getMonthsTotalDays(month, year) {
     if (month === 'February') {
       return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0) ? 29 : 28;
@@ -33,6 +35,7 @@ class Calender {
     return this.#daysInMonths[month];
   }
 
+  // Get the name of a month from its index
   getMonth(month) {
     return this.#months[month];
   }
@@ -53,6 +56,7 @@ class CalenderUIHandler {
     this.currentMonth = this.today.getMonth();
   }
 
+  // Navigate to the previous month
   previousMonth() {
     this.currentYear =
       this.currentMonth === 0 ? this.currentYear - 1 : this.currentYear;
@@ -60,6 +64,7 @@ class CalenderUIHandler {
     this.displayCalender(this.currentMonth, this.currentYear);
   }
 
+  // Navigate to the next month
   nextMonth() {
     this.currentYear =
       this.currentMonth === 11 ? this.currentYear + 1 : this.currentYear;
@@ -67,6 +72,7 @@ class CalenderUIHandler {
     this.displayCalender(this.currentMonth, this.currentYear);
   }
 
+  // send text for emoji for user mood
   getUserMood(mood) {
     switch (mood) {
       case 'excited':
@@ -83,6 +89,7 @@ class CalenderUIHandler {
     }
   }
 
+  // display calender week day (Sunday-Saturday)
   displayWeekdays() {
     let calenderWeekdays = calenderBody.querySelector('.calender-weekdays');
     let weekdays = this.constructorObj.getWeekday;
@@ -95,9 +102,11 @@ class CalenderUIHandler {
     }
   }
 
+  // display calender footer with month and year as an input
   displayCalenderFooter(month, year) {
     const yearsElement = calenderContainer.querySelector('#years');
     const monthElement = calenderContainer.querySelector('#months');
+    yearsElement.innerHTML = '';
 
     for (
       let startYear = 2000;
@@ -115,6 +124,7 @@ class CalenderUIHandler {
     monthElement.value = !month ? this.today.getMonth() : month;
   }
 
+  // Display calendar with mood data
   displayCalender(month, year) {
     const calenderDaysELement = calenderBody.querySelector('.calender-days');
     const currentMonth = calenderHeader.querySelector('.current-month');
@@ -177,6 +187,7 @@ class CalenderUIHandler {
     localStorage.setItem('year', JSON.stringify(year));
   }
 
+  // Initialize calendar on page load
   init() {
     let selectedMonth = this.today.getMonth();
     let selectedYear = this.today.getFullYear();

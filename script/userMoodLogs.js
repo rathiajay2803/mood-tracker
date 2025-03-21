@@ -1,4 +1,6 @@
+// userMoodLogs.js - Handles storing and retrieving mood logs
 class UserMoodLogs {
+  // Initial default data structure
   #initialData = [
     {
       year: 2025,
@@ -16,6 +18,8 @@ class UserMoodLogs {
       },
     },
   ];
+
+  // Stores user mood logs in memory
   #userlogs = [
     {
       year: 2025,
@@ -36,6 +40,7 @@ class UserMoodLogs {
 
   constructor() {}
 
+  // Fetches mood logs from localStorage or initializes with default data
   fetchUserMoodLogs() {
     const storedData = localStorage.getItem('userlogs');
 
@@ -47,6 +52,7 @@ class UserMoodLogs {
     }
   }
 
+  // Retrieves user logs for a given month and year
   getselectedMonthUserLogs(month, year) {
     const userLogsforMentionedyear = this.#userlogs.filter(
       (logs) => logs.year == year
@@ -58,6 +64,7 @@ class UserMoodLogs {
       : userLogsforMentionedyear[0]['months'][month];
   }
 
+  // Updates mood logs and saves to localStorage
   updateUserMoodLogs(year, month, date, emojiName) {
     const userLogsforMentionedyear = this.#userlogs.filter(
       (logs) => logs.year == year

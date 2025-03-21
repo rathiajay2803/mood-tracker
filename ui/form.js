@@ -3,30 +3,14 @@ const emojisMoodContainer = emojiMoodForm.querySelector(
   '.mood-emojis-container'
 );
 
-let userMoodLogs = [
-  {
-    year: 2025,
-    months: {
-      March: {
-        0: 'excited',
-        1: 'happy',
-        2: 'happy',
-        3: 'sad',
-        4: 'neutral',
-        6: 'neutral',
-        7: 'sad',
-        8: 'happy',
-      },
-    },
-  },
-];
-
+// Class to handle form interactions
 class EmojiFormHandler {
   constructor(calenderObj, userMoodObj) {
     this.calenderObj = calenderObj;
     this.userMoodObj = userMoodObj;
   }
 
+  // Reset the selected emoji radio button
   resetRadioInput() {
     emojisMoodContainer
       .querySelectorAll('input[type="radio"]')
@@ -37,6 +21,7 @@ class EmojiFormHandler {
       });
   }
 
+  // Reset the selected emoji label styling
   resetLabels() {
     emojisMoodContainer.querySelectorAll('label').forEach((emojiLabel) => {
       if (emojiLabel.classList.contains('selected')) {
@@ -45,11 +30,14 @@ class EmojiFormHandler {
     });
   }
 
+  // Completely reset the mood form inputs and UI selection
   resetForm() {
     emojiMoodForm.querySelector('#moodDate').value = '';
     this.resetLabels();
     this.resetRadioInput();
   }
+
+  // Handles emoji selection when clicked
   selectEmoji(e) {
     e.preventDefault();
 
@@ -71,6 +59,7 @@ class EmojiFormHandler {
     emojiLabel.classList.toggle('selected');
   }
 
+  // Handles form submission (saving mood data)
   submitEmojiForm(e) {
     e.preventDefault();
     let selectedFormDate = emojiMoodForm.querySelector('#moodDate').value;
@@ -107,11 +96,7 @@ class EmojiFormHandler {
     );
 
     console.log(this.userMoodObj);
-    // const monthsLogs = this.userMoodObj.getselectedMonthUserLogs(
-    //   selectedmonth,
-    //   selectedyear
-    // );
-    // console.log(monthsLogs);
+
     this.calenderObj.displayCalender(selectedmonth, selectedyear);
     this.resetForm();
   }
